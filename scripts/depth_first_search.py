@@ -13,12 +13,15 @@ k = 15
 
 def dfs(i: int, sum) -> bool:
     if i == n:
+        # インデックスの最大値の場合、合計値と与えられたkが一致していたらTrueを返す
         return sum == k
 
     if dfs(i + 1, sum):
+        # 現在のインデックスを足さないパターン
         return True
 
     if dfs(i + 1, sum + i_list[i]):
+        # 現在のインデックスを足すパターン
         return True
 
     return False
